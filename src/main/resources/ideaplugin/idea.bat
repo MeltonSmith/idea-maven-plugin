@@ -9,6 +9,8 @@ set assertNotNull=
 set autoscrollFromSource=
 set autoscrollToSource=
 set compileInBackground=
+set mavenThreads=
+set mavenHome=
 set deploymentContextPath=
 set gaeHome=
 set hideEmptyPackages=
@@ -23,6 +25,7 @@ set selectedWarArtifactId=
 set sortByType=
 set vmParameters=
 set wildcardResourcePatterns=
+set buildProcessHeapSize=
 
 rem -- Check Command Line --
 
@@ -75,6 +78,14 @@ set command=%command% -DautoscrollToSource="%autoscrollToSource%"
 if "%compileInBackground%" == "" goto compileInBackground
 set command=%command% -DcompileInBackground="%compileInBackground%"
 :compileInBackground
+
+if "%mavenHome%" == "" goto mavenHome
+set command=%command% -DmavenHome="%mavenHome%"
+:mavenHome
+
+if "%mavenThreads%" == "" goto mavenThreads
+set command=%command% -mavenThreads="%mavenThreads%"
+:mavenThreads
 
 if "%deploymentContextPath%" == "" goto deploymentContextPath
 set command=%command% -DdeploymentContextPath="%deploymentContextPath%"
@@ -131,6 +142,10 @@ set command=%command% -DvmParameters="%vmParameters%"
 if "%wildcardResourcePatterns%" == "" goto wildcardResourcePatterns
 set command=%command% -DwildcardResourcePatterns="%wildcardResourcePatterns%"
 :wildcardResourcePatterns
+
+if "%buildProcessHeapSize%" == "" goto buildProcessHeapSize
+set command=%command% -DbuildProcessHeapSize="%buildProcessHeapSize%"
+:buildProcessHeapSize
 
 @echo on
 mvn %command% com.github.zhve:idea-maven-plugin:3.0b1:%1

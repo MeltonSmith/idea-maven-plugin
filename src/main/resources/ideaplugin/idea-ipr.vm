@@ -48,6 +48,7 @@
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="compAPI" />
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="$buildProcessHeapSize" />
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="$wildcardResourcePatterns" />

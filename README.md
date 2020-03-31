@@ -6,15 +6,20 @@ IDEA Maven Plugin
 
 Intro
 -----
-Maven Integration (build-in plugin to open maven projects in IDEA) is a good choice when you just want to open a project from scratch.
-if you want specific project settings you have to set its up manually.
-Maven Integration doesn't have any configuration file, it just opens your project with default settings. If you want your own, it's plugin for you.
+Maven Integration (build-in plugin to open maven projects in IDEA) is a good choice when you just want to create a project from scratch.
+If you want some specific project settings to take place, then you have to set it up manually.
+Unfortunately, Maven Integration doesn't have any configuration file, it just opens your project with default settings. If you want your own, this plugin for you.
 
 How to Use
 ----------
-IDEA Maven Plugin is deployed to Maven Central and you can simple run
+IDEA Maven Plugin is not deployed to Maven Central yet, so you have to:
 
-`mvn com.github.zhve:idea-maven-plugin:3.0b1:idea`
+- mvn install this plugin in your local repo as jar
+
+- run the following in a directory with pom.xml (root pom)
+
+
+`mvn com.github.zhve:idea-maven-plugin:3.0b2_forked:idea`
 
 If you want to use non default settings, save [idea.bat](https://raw.githubusercontent.com/zhve/idea-maven-plugin/master/src/main/resources/ideaplugin/idea.bat) to your project root, edit parameters, and run:
 
@@ -74,6 +79,16 @@ Parameters
   <td>autoscrollFromSource</td>
   <td>Autoscroll from Source (Project Pane)</td>
   <td>false</td>
+</tr>
+<tr>
+  <td>buildProcessHeapSize</td>
+  <td>Build Process Heap Size (Project Pane)</td>
+  <td>1536</td>
+</tr>
+<tr>
+  <td>mavenThreads</td>
+  <td>Maven Threads Param (Maven Settings pane)</td>
+  <td>4</td>
 </tr>
 <tr>
   <td>hideEmptyPackages</td>

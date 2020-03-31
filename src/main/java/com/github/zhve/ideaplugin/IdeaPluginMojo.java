@@ -179,6 +179,18 @@ public class IdeaPluginMojo extends IdeaPluginMojoBase {
     @Parameter(property = "performCodeAnalysisBeforeCommit", defaultValue = "false")
     private boolean performCodeAnalysisBeforeCommit;
 
+    /**
+     * buildProcessHeapSize option
+     */
+    @Parameter(property = "buildProcessHeapSize", defaultValue = "1536")
+    private String buildProcessHeapSize;
+
+    /**
+     * Thread count option in maven settings.
+     */
+    @Parameter(property = "mavenThreads", defaultValue = "4")
+    private String mavenThreads;
+
     protected void doExecute() throws Exception {
         // prepare
         ArtifactHolder artifactHolder = getArtifactHolder();
@@ -208,6 +220,7 @@ public class IdeaPluginMojo extends IdeaPluginMojoBase {
         context.put("assembleModulesIntoJars", assembleModulesIntoJars);
         context.put("jdkName", jdkName);
         context.put("jdkLevel", jdkLevel);
+        context.put("buildProcessHeapSize", buildProcessHeapSize);
         context.put("wildcardResourcePatterns", Util.escapeXmlAttribute(wildcardResourcePatterns));
         List<MavenProject> warProjects = artifactHolder.getProjectsWithPackaging("war");
         // check id uniques
@@ -257,6 +270,8 @@ public class IdeaPluginMojo extends IdeaPluginMojoBase {
         context.put("optimizeImportsBeforeCommit", optimizeImportsBeforeCommit);
         context.put("reformatCodeBeforeCommit", reformatCodeBeforeCommit);
         context.put("performCodeAnalysisBeforeCommit", performCodeAnalysisBeforeCommit);
+        context.put("mavenThreads", mavenThreads);
+        context.put("mavenHome", System.getenv("MAVEN_HOME"));
 
         if (!warProjects.isEmpty()) {
             // fill war-attributes

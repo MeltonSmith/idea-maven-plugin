@@ -14,6 +14,7 @@
 #* @vtlvariable name="issueRegexp" type="java.lang.String" file="idea-ipr.vm" *#
 #* @vtlvariable name="issueNavigationExist" type="boolean" file="idea-ipr.vm" *#
 #* @vtlvariable name="wildcardResourcePatterns" type="java.lang.String" file="idea-ipr.vm" *#
+#* @vtlvariable name="buildProcessHeapSize" type="java.lang.String" file="idea-ipr.vm" *#
 #* @vtlvariable name="gaeHome" type="java.lang.String" file="idea-ipr.vm" *#
 #* @vtlvariable name="assembleModulesIntoJars" type="boolean" file="idea-ipr.vm" *#
 #* @vtlvariable name="warProjects" type="java.util.List<org.apache.maven.project.MavenProject>" file="idea-ipr.vm" *#
@@ -23,6 +24,8 @@
 #* @vtlvariable name="compileInBackground" type="boolean" file="idea-iws.vm"*#
 #* @vtlvariable name="assertNotNull" type="boolean" file="idea-iws.vm"*#
 #* @vtlvariable name="gaeHome" type="java.lang.String" file="idea-iws.vm"*#
+#* @vtlvariable name="mavenHome" type="java.lang.String" file="idea-iws.vm"*#
+#* @vtlvariable name="mavenThreads" type="java.lang.String" file="idea-iws.vm"*#
 #* @vtlvariable name="warProject" type="org.apache.maven.project.MavenProject" file="idea-iws.vm"*#
 #* @vtlvariable name="applicationServerName" type="java.lang.String" file="idea-iws.vm"*#
 #* @vtlvariable name="applicationServerTitle" type="java.lang.String" file="idea-iws.vm"*#
