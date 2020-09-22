@@ -19,7 +19,7 @@ IDEA Maven Plugin is not deployed to Maven Central yet, so you have to:
 - run the following in a directory with pom.xml (root pom)
 
 
-`mvn com.github.zhve:idea-maven-plugin:3.0b2_forked:idea`
+`mvn com.github.zhve:idea-maven-plugin:3.0b2:idea`
 
 If you want to use non default settings, save [idea.bat](https://raw.githubusercontent.com/zhve/idea-maven-plugin/master/src/main/resources/ideaplugin/idea.bat) to your project root, edit parameters, and run:
 
