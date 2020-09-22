@@ -4,6 +4,16 @@ IDEA Maven Plugin
 
 **idea-maven-plugin** creates IDEA workspace files **.iml**, **.ipr** and **.iws** with your own settings based only on project structure and given profile.
 
+3.0b1-patched added features:
+-----
+- mavenThreads param (default is 4)
+- mavenDirectory will be set automatically (MAVEN_HOME env. var. is required)
+- buildProcessHeapSize param (default is 1536)
+- parallel compiling will be set to true by default
+
+To change any of these params edit your root pom.xml, by adding an appropriate node inside the `<configuration>` node.
+Example: `<mavenThreads>8</mavenThreads>`
+
 Intro
 -----
 Maven Integration (build-in plugin to open maven projects in IDEA) is a good choice when you just want to create a project from scratch.
